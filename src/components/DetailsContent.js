@@ -7,7 +7,7 @@ import { Container } from '@material-ui/core'
 
 const DetailsContent = ({ match, domain, detailsTab }) => {
 	useEffect(() => {
-		window.scrollBy({
+		window.scrollTo({
 			top: 0,
 			left: 0,
 			behavior: 'smooth'

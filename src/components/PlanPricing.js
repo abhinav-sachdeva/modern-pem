@@ -7,12 +7,23 @@ import config from '../config'
 import Highlights from "./Highlights"
 import PricingTable from "./PricingTable"
 import CarrierContact from "./CarrierContactModal"
+import HelpButton from "./HelpButton"
+import HelpCard from "./HelpCard"
+
+import starIcon from "../assets/icons/star.svg"
+import helpIcon from "../assets/icons/info.svg"
 
 const capitalize = (str => str[0].toUpperCase() + str.slice(1).toLowerCase())
 
 export default function PlanPricing({ domain, detailsTab }) {
 	const [carrierContactVisible, setCarrierContactVisible] = useState(false)
 	const [carrierId, setCarrierId] = useState(null)
+	const [helpCardVisible, setHelpCardVisible] = useState(false)
+	const [helpMessageId, setHelpMessageId] = useState("")
+	const showHelp = (msgId) => {
+		setHelpMessageId(msgId);
+		setHelpCardVisible(true)
+	}
 
 	return (
 		<Grid container spacing={0} >
@@ -40,6 +51,7 @@ export default function PlanPricing({ domain, detailsTab }) {
 					<Highlights
 						heading="Plan Highlights"
 						highlights={config[domain.toUpperCase()].planPricingHiglights}
+						icon={starIcon}
 					/>
 				</Grid>
 				<Grid item xs={12} md={3}>
@@ -58,6 +70,7 @@ export default function PlanPricing({ domain, detailsTab }) {
 							<Highlights
 								heading="A placeholder"
 								subheading="For something important, but not too important."
+								icon={helpIcon}
 							/>
 						</Grid>
 					</Grid>
@@ -75,8 +88,15 @@ export default function PlanPricing({ domain, detailsTab }) {
 					]}
 				/>
 			</Grid>
+			<Grid item xs={12}>
+				<HelpButton helpId="HELP1" onPress={showHelp} message="Help me out" />
+				<HelpButton helpId="HELP2" onPress={showHelp} message="Help me out again" />
+				<HelpButton helpId="HELP1" onPress={showHelp} message="Help me out with theis really long question" />
+				<HelpCard isOpen={helpCardVisible} messageId={helpMessageId} onClose={() => {
+					setHelpCardVisible(false)
+				}} />
+			</Grid>
 		</Grid>
-
 	)
 }
 
