@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button, Grid, Drawer, Container, CircularProgress } from '@material-ui/core';
 import { withRouter } from 'react-router'
 import axios from "axios"
 
+import UserContext from "../contexts/user"
+
 const InputForm = ({ open, onClose, history }) => {
 	const [fetching, setFetching] = useState(false)
 	const classes = useStyles();
+	const userState = useContext(UserContext)
+	console.log(userState)
 
 	const fetchResults = async () => {
 		setFetching(true)
 		const randomTodoId = Math.floor(Math.random() * Math.floor(10)) + 1
 		const results = await axios.get(`https://jsonplaceholder.typicode.com/todos/${randomTodoId}`);
 		console.log(results.data)
+		userState.updateDisclaimer(true)
+
 		setTimeout(() => {
 			alert(`You just fetched this data:\n${results.data.title}\n\nLook at the console for details.`)
 			setFetching(false)
 			history.push("/details/medical/plan-pricing")
-		}, 1500)
+		}, 1000)
 	}
 	return (
 		<Drawer className={classes.root} anchor="right" open={open} onClose={onClose}>
