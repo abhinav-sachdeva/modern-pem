@@ -9,7 +9,7 @@ export default function Highlights({ heading, subheading, highlights }) {
 			<h2 className={classes.noMargin}>{heading}</h2>
 			<h3 className={classes.noMargin}>{subheading}</h3>
 			<List dense>
-				{highlights.map((h, i) => (
+				{highlights && highlights.map((h, i) => (
 					<ListItem key={i}>
 						<ListItemIcon className={classes.olCount}>{i + 1}</ListItemIcon>
 						<ListItemText primary={h} />

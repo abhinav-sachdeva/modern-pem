@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		float: 'left',
 		marginRight: '5px'
 	},
-	narrowText: { lineHeight: '16px', backgroundColor: "#f7f7f7" },
+	narrowText: { lineHeight: '16px', backgroundColor: "#f7f7f7", cursor: 'pointer' },
 	textbadge: {
 		backgroundColor: "#ebedee",
 		padding: "5px 15px",

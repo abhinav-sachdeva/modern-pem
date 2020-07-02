@@ -6,6 +6,9 @@ body {
 }
 a { text-decoration: none}
 .no-margin { margin: 0px }
+#input-header {
+  background-image: url("./assets/img/pattern.svg")
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

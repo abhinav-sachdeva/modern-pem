@@ -21,11 +21,11 @@ export default function PlanPricing({ domain, detailsTab }) {
 				carrierId={carrierId}
 				onClose={() => setCarrierContactVisible(false)} />
 			<Grid container spacing={3} justify="space-between" alignItems="center">
-				<Grid item xs={12} sm={10}>
+				<Grid item xs={12} sm={9}>
 					<h1 style={{ marginBottom: '0px' }}> {capitalize(domain)} Plan Pricing</h1>
 					<h3 style={{ marginTop: '0px', marginBottom: '15px' }}> Here are the plans available to you based on your zip code.</h3>
 				</Grid>
-				<Grid item xs={12} sm={2} style={{ textAlign: 'right' }}>
+				<Grid item xs={12} sm={3} style={{ textAlign: 'right' }}>
 					<Link to="/inputs/edit?redirect"><Button variant="contained" fullWidth color="primary">Go Back</Button></Link>
 				</Grid>
 			</Grid>
@@ -39,29 +39,25 @@ export default function PlanPricing({ domain, detailsTab }) {
 				<Grid item xs={12} md={9}>
 					<Highlights
 						heading="Plan Highlights"
-						// subheading="Here are the plans available to you based on your zip code."
 						highlights={config[domain.toUpperCase()].planPricingHiglights}
 					/>
 				</Grid>
 				<Grid item xs={12} md={3}>
 					<Grid
 						container
-						direction="column-reverse"
-						// justify="space-around"
+						direction="column"
 						spacing={0}
 					>
 						<Grid item>
 							<Highlights
 								heading="Your Inputs"
 								subheading="The following numbers are based off the inputs you provided."
-								highlights={[]}
 							/>
 						</Grid>
 						<Grid item>
 							<Highlights
 								heading="A placeholder"
 								subheading="For something important, but not too important."
-								highlights={[]}
 							/>
 						</Grid>
 					</Grid>

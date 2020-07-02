@@ -1,21 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Hidden from '@material-ui/core/Hidden';
 import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid';
-import { withRouter } from "react-router"
-import { Link } from "react-router-dom";
+// import { withRouter } from "react-router"
 
+import InputForm from "./InputForm"
 
-// import heroimg from '../assets/img/heroimg.png'
-// import pattern from '../assets/img/pattern.png'
-
-
-function InputHeader(props) {
+function InputHeader() {
 	const classes = useStyles();
+	const [formVisible, setFormVisible] = useState(false)
+	const toggleDrawer = () => setFormVisible(state => !state)
+
 	return (
-		<div className={classes.root}>
+		<div id="input-header" className={classes.root}>
 			<Grid
 				container
 				direction="row"
@@ -29,9 +28,9 @@ function InputHeader(props) {
 					<Typography variant="h5" align="left" component="p" className={classes.heroSubTitle}>
 						Explore the plans, insurance carriers and prices that will be available to you when you enroll.
         	</Typography>
-					<Link to={`${props.match.path}/edit`}>
-						<Chip className={classes.optionChip} label="Get me Started" />
-					</Link>
+
+					<Chip className={classes.optionChip} label="Get me Started" onClick={toggleDrawer} />
+
 				</Grid>
 				<Grid item xs={12} md={4}>
 					<Hidden smDown>{null}
@@ -39,6 +38,7 @@ function InputHeader(props) {
 					</Hidden>
 				</Grid>
 			</Grid>
+			<InputForm open={formVisible} onClose={toggleDrawer} />
 		</div>
 	)
 }
@@ -73,4 +73,4 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default withRouter(InputHeader)
+export default (InputHeader)
