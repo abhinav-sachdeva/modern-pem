@@ -81,7 +81,6 @@ const Row = (props) => {
 						<Typography variant="h6" gutterBottom component="div">
 							Description {rowId < 2 && <Hidden smUp><Typography className={classes.textbadge} variant="button">HSA Eligible</Typography></Hidden>}
 						</Typography>
-
 						<Typography variant="body2" gutterBottom component="div">Some generic description to tell about this tier</Typography>
 					</Collapse>
 				</TableCell>

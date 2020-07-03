@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/ExpansionPanel';
 import AccordionSummary from '@material-ui/core/ExpansionPanelSummary';
 import AccordionDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
 
 import SummaryCard from "./SummaryCard"
 const useStyles = makeStyles((theme) => ({
