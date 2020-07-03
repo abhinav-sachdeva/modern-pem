@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button, Grid, Drawer, Container, CircularProgress } from '@material-ui/core';
+import { Chip, Typography, Button, Grid, Drawer, Container, CircularProgress } from '@material-ui/core';
 import { withRouter } from 'react-router'
 import axios from "axios"
 
@@ -37,6 +37,25 @@ const InputForm = ({ open, onClose, history }) => {
 					<Grid item xs={2}>
 						<Button fullWidth variant="text" onClick={onClose}>&times;</Button>
 					</Grid>
+					<hr />
+					<Grid item xs={12}>
+						{[1, 2, 3].map(e => (
+							<div key={e}>
+								<Typography component="span" variant="body1" align="left" color="textPrimary" >Input {e} </Typography><br />
+								<Typography component="span" variant="subtitle2" align="left" color="textPrimary">Helper text. Not too long.</Typography>
+								<div>
+									<Chip className={classes.optionChip} color="primary" label="Option 1" />
+									<Chip className={classes.optionChip} variant="outlined" color="primary" label="Option 2" />
+									{e === 3 && (<><Chip className={classes.optionChip} variant="outlined" color="primary" label="Option 3" />
+										<Chip className={classes.optionChip} variant="outlined" color="primary" label="Option 4" />
+										<Chip className={classes.optionChip} variant="outlined" color="primary" label="Option 5" /></>)}
+								</div>
+							</div>
+
+						))}
+					</Grid>
+
+
 					<Grid item xs={12}>
 						<Button fullWidth variant="contained" color="primary" onClick={fetchResults}>
 							{fetching ? <CircularProgress size={24} color="inherit" /> : 'Submit'}
