@@ -9,6 +9,7 @@ import PricingTable from "./PricingTable"
 import CarrierContact from "./CarrierContactModal"
 import HelpButton from "./HelpButton"
 import HelpCard from "./HelpCard"
+import SummaryAccordion from "./SummaryAccordion"
 
 import starIcon from "../assets/icons/star.svg"
 import helpIcon from "../assets/icons/info.svg"
@@ -80,11 +81,11 @@ export default function PlanPricing({ domain, detailsTab }) {
 				<PricingTable
 					onCarrierClick={(id) => { setCarrierId(id); setCarrierContactVisible(true) }}
 					rows={[
-						createData('Item', 159, 6.0, 24, 4.0, 3.99),
+						createData('Item', 15, 60, 24, 40, 39),
 						createData('Item', 237, 9.0, 37, 4.3, 4.99),
 						createData('Item', 262, 16.0, 24, 6.0, 3.79),
 						createData('Item', 305, 3.7, 67, 4.3, 2.5),
-						createData('Item', 356, 16.0, 49, 3.9, 1.5),
+						createData('Item', '1,356', '1,600', '2,449', '1,239', 1.5),
 					]}
 				/>
 			</Grid>
@@ -95,6 +96,11 @@ export default function PlanPricing({ domain, detailsTab }) {
 				<HelpCard isOpen={helpCardVisible} messageId={helpMessageId} onClose={() => {
 					setHelpCardVisible(false)
 				}} />
+			</Grid>
+			<br /><br />
+			<Grid item xs={12}>
+				<h1 style={{ marginBottom: '10px' }}> Benefits Summary</h1>
+				<SummaryAccordion />
 			</Grid>
 		</Grid>
 	)

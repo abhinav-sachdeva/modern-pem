@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		float: 'left',
 		marginRight: '5px'
 	},
-	narrowText: { lineHeight: '16px', backgroundColor: "#f7f7f7", cursor: 'pointer' },
+	narrowText: { lineHeight: '16px', backgroundColor: "#ebedee", cursor: 'pointer' },
 	textbadge: {
 		backgroundColor: "#ebedee",
 		padding: "5px 15px",
@@ -56,12 +56,24 @@ const Row = (props) => {
 					<Hidden smDown><Typography variant="inherit">Tier {rowId + 1} </Typography></Hidden>{" "}
 					{rowId < 2 && <Hidden smDown><Typography className={classes.textbadge} variant="button">HSA Eligible</Typography></Hidden>}
 				</TableCell>
-				<TableCell align="center">{row.calories}</TableCell>
-				<TableCell align="center">{row.fat}</TableCell>
-				<TableCell align="center">{row.carbs}</TableCell>
-				<TableCell align="center">{row.protein}</TableCell>
-				<TableCell align="center">{row.carbs}</TableCell>
-				<TableCell align="center">{row.fat}</TableCell>
+				<TableCell align="center">
+					<Typography>${row.calories}</Typography>
+				</TableCell>
+				<TableCell align="center">
+					<Typography>${row.fat}</Typography>
+				</TableCell>
+				<TableCell align="center">
+					<Typography>${row.carbs}</Typography>
+				</TableCell>
+				<TableCell align="center">
+					<Typography>${row.protein}</Typography>
+				</TableCell>
+				<TableCell align="center">
+					<Typography>${row.carbs}</Typography>
+				</TableCell>
+				<TableCell align="center">
+					<Typography>${row.fat}</Typography>
+				</TableCell>
 			</TableRow>
 			<TableRow>
 				<TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>

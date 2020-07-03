@@ -1,11 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
+import { Paper, List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
 
 export default function Highlights({ heading, subheading, highlights, icon }) {
 	const classes = useStyles();
 	return (
-		<div className={classes.higlightsContainer}>
+		<Paper elevation={0} className={classes.higlightsContainer}>
 			<h2 className={classes.noMargin}>{icon && <img alt="" src={icon} className={classes.icon} />}{heading}</h2>
 			<h3 className={classes.noMargin}>{subheading}</h3>
 			<List dense>
@@ -17,7 +17,7 @@ export default function Highlights({ heading, subheading, highlights, icon }) {
 				)
 				)}
 			</List>
-		</div>
+		</Paper>
 	)
 }
 
