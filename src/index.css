@@ -7,7 +7,17 @@ body {
 a { text-decoration: none}
 .no-margin { margin: 0px }
 #input-header {
-  background-image: url("./assets/img/pattern.svg")
+  background-image: url("./assets/img/pattern.svg");
+  background-size: 150px;
+}
+.offline {
+  background-image: url("./assets/icons/offline.svg");
+  height: 150px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  background-position: center;
+  text-align: center;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

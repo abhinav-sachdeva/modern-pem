@@ -24,7 +24,7 @@ export default function Highlights({ heading, subheading, highlights, icon }) {
 const useStyles = makeStyles((theme) => ({
 	noMargin: { margin: '0px' },
 	olCount: {
-		backgroundColor: '#1d4354',
+		backgroundColor: theme.palette.primary.main,
 		textAlign: 'center',
 		padding: '2px 5px',
 		display: 'inline',

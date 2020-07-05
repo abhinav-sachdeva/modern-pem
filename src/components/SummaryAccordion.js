@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/ExpansionPanel';
 import AccordionSummary from '@material-ui/core/ExpansionPanelSummary';
 import AccordionDetails from '@material-ui/core/ExpansionPanelDetails';
+import Grid from '@material-ui/core/Grid';
 
 import SummaryCard from "./SummaryCard"
 const useStyles = makeStyles((theme) => ({
@@ -12,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 	accordionHead: {
 		backgroundColor: theme.palette.secondary.main
 	},
+	cardContainer: { minWidth: '250px' }
 }));
 
 export default function SimpleAccordion() {
@@ -23,9 +25,14 @@ export default function SimpleAccordion() {
 				<AccordionSummary className={classes.accordionHead} aria-controls="panel1a-content">
 					<h2 className="no-margin">First Item</h2>
 				</AccordionSummary>
-				<AccordionDetails>
-					<SummaryCard />
-					<SummaryCard />
+				<AccordionDetails style={{ overflow: "auto" }}>
+					<Grid spacing={1} container direction="row" wrap="nowrap">
+						{
+							[1, 2, 3, 4, 5, 6].map(tier => (<Grid key={tier} item className={classes.cardContainer}>
+								<SummaryCard tier={'Tier ' + tier} desc="Some description about this item corresponding to the tier mentioned." />
+							</Grid>))
+						}
+					</Grid>
 				</AccordionDetails>
 			</Accordion>
 			<Accordion>
@@ -33,8 +40,13 @@ export default function SimpleAccordion() {
 					<h2 className="no-margin">Second Item</h2>
 				</AccordionSummary>
 				<AccordionDetails>
-
-					<SummaryCard />
+					<Grid spacing={1} container direction="row" wrap="nowrap">
+						{
+							[1, 2, 3, 4].map(tier => (<Grid key={tier} item className={classes.cardContainer}>
+								<SummaryCard tier={'Tier ' + tier} desc="Some description about this item corresponding to the tier mentioned." />
+							</Grid>))
+						}
+					</Grid>
 				</AccordionDetails>
 			</Accordion>
 		</div>

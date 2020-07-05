@@ -4,9 +4,9 @@ import { createMuiTheme } from "@material-ui/core";
 // 		type: 'dark',
 // 		primary: { main: '#07ddff' },
 // 		secondary: { main: '#04aeca' },
-// 		background: {
-// 			paper: '#424242'
-// 		}
+// 		// background: {
+// 		// 	paper: '#424242'
+// 		// }
 // 	},
 // 	typography: {
 // 		fontFamily: 'Nunito, sans-serif',
@@ -16,10 +16,15 @@ import { createMuiTheme } from "@material-ui/core";
 const lightTheme = {
 	palette: {
 		primary: {
-			main: "#1d4354",
+			main: "#000",
 		},
 		secondary: {
 			main: "#efefef"
+		},
+		background: {
+			// paper: {
+			// 	main: "#efefef"
+			// }
 		},
 		type: "light"
 	},

@@ -10,7 +10,6 @@ const InputForm = ({ open, onClose, history }) => {
 	const [fetching, setFetching] = useState(false)
 	const classes = useStyles();
 	const userState = useContext(UserContext)
-	console.log(userState)
 
 	const fetchResults = async () => {
 		setFetching(true)

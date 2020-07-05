@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Hidden from '@material-ui/core/Hidden';
 import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid';
+// import Paper from '@material-ui/core/Paper';
 // import { withRouter } from "react-router"
 
 import InputForm from "./InputForm"
@@ -21,9 +22,9 @@ function InputHeader() {
 				justify="center"
 				alignItems="stretch"
 			>
-				<Grid item xs={12} md={6}>
+				<Grid item xs={12} md={6} className={classes.headerText}>
 					<Typography component="h1" variant="h3" align="left" className={classes.heroTitle}>
-						Enrollment is just around the corner. Get a preview of your benefit options.
+						Enrollment is just around the corner.
         	</Typography>
 					<Typography variant="h5" align="left" component="p" className={classes.heroSubTitle}>
 						Explore the plans, insurance carriers and prices that will be available to you when you enroll.
@@ -44,19 +45,22 @@ function InputHeader() {
 }
 
 const useStyles = makeStyles((theme) => ({
-	heroContent: {
-		padding: theme.spacing(8, 0, 6),
+	headerText: {
+		background: "rgba(255,255,255,0.8)",
+		padding: '0px 5px',
+		borderRadius: '10px'
 	},
 	root: {
 		flexGrow: 1,
 		padding: '7px',
 		// background: 'linear-gradient(to right, #4e54c8, #8f94fb)',
 		// backgroundImage: 'linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%)'
-		background: '#1d4354',
+		// background: '#1d4354',
+		// background: '#ffffff',
 
 	},
-	heroTitle: { fontWeight: 'bold', color: '#efefef' },
-	heroSubTitle: { color: '#eee' },
+	heroTitle: { fontWeight: 'bold', color: '#000' },
+	// heroSubTitle: { color: '#eee' },
 	getStartedBtn: {
 		margin: '20px 0px',
 		fontWeight: 'bold',
