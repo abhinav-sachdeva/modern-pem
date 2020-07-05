@@ -6,7 +6,7 @@ import InputHeader from "../components/InputHeader"
 import InputForm from "../components/InputForm"
 
 export default function InputPage(props) {
-	if (!navigator.onLine) return <Redirect to="/offline" />
+	if (!navigator.onLine) return <Redirect to="/offline.html" />
 	return (
 		<React.Fragment>
 			<InputHeader />
