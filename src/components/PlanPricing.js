@@ -92,7 +92,7 @@ export default function PlanPricing({ domain, detailsTab }) {
 			<Grid item xs={12}>
 				<HelpButton helpId="HELP1" onPress={showHelp} message="Help me out" />
 				<HelpButton helpId="HELP2" onPress={showHelp} message="Help me out again" />
-				<HelpButton helpId="HELP1" onPress={showHelp} message="Help me out with theis really long question" />
+				<HelpButton helpId="HELP1" onPress={showHelp} message="Help me out with this really long question" />
 				<HelpCard isOpen={helpCardVisible} messageId={helpMessageId} onClose={() => {
 					setHelpCardVisible(false)
 				}} />

@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 	accordionHead: {
 		backgroundColor: theme.palette.secondary.main
 	},
+	accordionContent: { overflow: 'auto' },
 	cardContainer: { minWidth: '250px' }
 }));
 
@@ -22,10 +23,10 @@ export default function SimpleAccordion() {
 	return (
 		<div className={classes.root}>
 			<Accordion>
-				<AccordionSummary className={classes.accordionHead} aria-controls="panel1a-content">
+				<AccordionSummary className={classes.accordionHead}>
 					<h2 className="no-margin">First Item</h2>
 				</AccordionSummary>
-				<AccordionDetails style={{ overflow: "auto" }}>
+				<AccordionDetails className={classes.accordionContent}>
 					<Grid spacing={1} container direction="row" wrap="nowrap">
 						{
 							[1, 2, 3, 4, 5, 6].map(tier => (<Grid key={tier} item className={classes.cardContainer}>
@@ -36,10 +37,10 @@ export default function SimpleAccordion() {
 				</AccordionDetails>
 			</Accordion>
 			<Accordion>
-				<AccordionSummary className={classes.accordionHead} aria-controls="panel1a-content">
+				<AccordionSummary className={classes.accordionHead}>
 					<h2 className="no-margin">Second Item</h2>
 				</AccordionSummary>
-				<AccordionDetails>
+				<AccordionDetails className={classes.accordionContent}>
 					<Grid spacing={1} container direction="row" wrap="nowrap">
 						{
 							[1, 2, 3, 4].map(tier => (<Grid key={tier} item className={classes.cardContainer}>
