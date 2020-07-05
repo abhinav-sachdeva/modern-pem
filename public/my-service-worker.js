@@ -2,7 +2,7 @@ console.log("in service worker");
 const cacheName = "mb-assets";
 const assets = [
 	'/',
-	'/offline',
+	'/offline.html',
 	'manifest.json',
 	'https://fonts.googleapis.com/css2?family=Nunito']
 

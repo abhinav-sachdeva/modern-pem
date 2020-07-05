@@ -56,7 +56,7 @@ const InputForm = ({ open, onClose, history }) => {
 
 
 					<Grid item xs={12}>
-						<Button fullWidth variant="contained" color="primary" onClick={fetchResults}>
+						<Button fullWidth disabled={fetching} variant="contained" color="primary" onClick={fetchResults}>
 							{fetching ? <CircularProgress size={24} color="inherit" /> : 'Submit'}
 						</Button>
 					</Grid>

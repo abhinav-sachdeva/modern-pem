@@ -47,8 +47,9 @@ function InputHeader() {
 const useStyles = makeStyles((theme) => ({
 	headerText: {
 		background: "rgba(255,255,255,0.8)",
-		padding: '0px 5px',
-		borderRadius: '10px'
+		padding: '0px 15px',
+		borderRadius: '10px',
+		border: '1px solid #ccc'
 	},
 	root: {
 		flexGrow: 1,
