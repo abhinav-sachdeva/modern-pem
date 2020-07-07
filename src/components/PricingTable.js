@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Table, Collapse, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Hidden }
 	from '@material-ui/core';
+
+import BenefitsContext from "../contexts/benefits"
 
 const useStyles = makeStyles((theme) => ({
 	tableContainer: {
@@ -45,6 +47,7 @@ const Row = (props) => {
 	const classes = useStyles();
 	const { row, rowId } = props;
 	const [open, setOpen] = React.useState(false);
+
 
 	return (
 		<React.Fragment>
@@ -91,9 +94,10 @@ const Row = (props) => {
 
 
 
-export default function CollapsibleTable({ rows, onCarrierClick }) {
+function CollapsibleTable({ rows, onCarrierClick }) {
 	const classes = useStyles();
-
+	const ben = useContext(BenefitsContext)
+	console.log(ben)
 	return (
 		<TableContainer component={Paper} className={classes.tableContainer}>
 			<Table aria-label="collapsible table">
@@ -121,3 +125,5 @@ export default function CollapsibleTable({ rows, onCarrierClick }) {
 		</TableContainer>
 	);
 }
+
+export default React.memo(CollapsibleTable)

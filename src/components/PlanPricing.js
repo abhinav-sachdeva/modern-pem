@@ -38,7 +38,9 @@ export default function PlanPricing({ domain, detailsTab }) {
 					<h3 style={{ marginTop: '0px', marginBottom: '15px' }}> Here are the plans available to you based on your zip code.</h3>
 				</Grid>
 				<Grid item xs={12} sm={3} style={{ textAlign: 'right' }}>
-					<Link to="/inputs/edit?redirect"><Button variant="contained" fullWidth color="primary">Go Back</Button></Link>
+					<Link to={{ pathname: "/inputs", state: { openDrawer: true } }}>
+						<Button variant="contained" fullWidth color="primary">Go Back</Button>
+					</Link>
 				</Grid>
 			</Grid>
 			<Grid
